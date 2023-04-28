@@ -18,9 +18,18 @@ from django.urls import path
 # from api import views
 from CRUD_DRF_API_VIEW import views
 
+
+# ==================================This will work with the function based API Views
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     # path('studAPI/',views.hellow_world),
+#     path('stuapi/',views.studentAPI),
+#     path('stuapi/<int:pk>',views.studentAPI)
+# ]
+
+#=============================== This will work with the Class Based API View==============================
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('studAPI/',views.hellow_world),
-    path('stuapi/',views.studentAPI),
-    path('stuapi/<int:pk>',views.studentAPI)
+    path('stuapi/',views.StudentAPI.as_view()),
+    path('stuapi/<int:pk>',views.StudentAPI.as_view()),
 ]
